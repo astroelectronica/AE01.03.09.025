@@ -1,0 +1,15 @@
+*transient response
+.include ../AE01.03.09.025.cir
+.tran 0 {x_base} 0 ;uic startup
+.param vsource=60
+.param vsupply=5
+.param tr=10n
+.param tf=10n
+.param delay=0
+.param frec=1k
+.param cycle=1/frec
+.param x_base=(cycle*2)+delay
+;.step param percent list 90 75 50
+.param percent=90
+.param duty=(percent/100)*cycle
+.temp 25
